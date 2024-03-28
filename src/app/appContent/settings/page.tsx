@@ -1,6 +1,12 @@
+"use client"
+
+import AddedItemsNotification, { ActionType, Notifications } from "./addedItemsNotification";
+
 export default function Page() {
+
     return (
         <div className="w-2/3 mx-auto">
+            <AddedItemsNotification />
             <div className="flex justify-evenly">
                 <div className="flex flex-col gap-4">
                     <div>
@@ -61,7 +67,14 @@ export default function Page() {
                     </div>
                 </div>
             </div>
-            <button className="block mx-auto mt-16 px-3 py-2 rounded-xl bg-black text-white">Save</button>
+            <button className="block mx-auto mt-16 px-3 py-2 rounded-xl bg-black text-white" onClick={() => {
+                Notifications.NotificationQueue.push({
+                    action: ActionType.ADD,
+                });
+
+                Notifications.updateNotificationQueue &&
+                    Notifications.updateNotificationQueue();
+            }}>Save</button>
         </div>
     )
 }
