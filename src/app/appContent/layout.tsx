@@ -16,14 +16,12 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en">
-            <body className={`${inter.className} m-5`}>
-                <header className="flex justify-between pb-4 border-black border-b-2 mb-9">
-                    <p className="text-4xl">SAIT</p>
-                    <NavBar />
-                </header>
-                {children}
-            </body>
-        </html>
+        <div className="relative z-20 p-5">
+            <header className="flex justify-between pb-4 border-white border-b-2 mb-9">
+                <p className="text-4xl">SAIT</p>
+                <NavBar />
+            </header>
+            {children}
+        </div>
     );
 }

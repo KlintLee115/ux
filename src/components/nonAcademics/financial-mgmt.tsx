@@ -12,8 +12,9 @@ interface PieChartProps {
 }
 const options: ChartOptions<'pie'> = {
     plugins: {
+
         legend: {
-            display: true,
+            display: false,
             position: 'top',
             labels: {
                 font: {
@@ -37,8 +38,8 @@ const data: ChartData<'pie'> = {
         {
             label: 'Amount (CAD $)',
             data: [12, 19, 3],
-            backgroundColor: ['red', 'blue', 'yellow'],
-            borderColor: ['red', 'blue', 'yellow'],
+            backgroundColor: ['red', 'blue', 'green'],
+            borderColor: ['red', 'blue', 'green'],
             borderWidth: 1,
         },
     ],
@@ -48,25 +49,25 @@ const data: ChartData<'pie'> = {
 export default function FinancialMgmt() {
     return (
         <>
-            <div className="flex">
+            <div className="flex justify-center">
                 <p className="text-center text-7xl text-yellow-500">!</p>
-                <p className="text-base mt-4 text-wrap max-w-48">Your PAYMENT DUE DATE IS <span className="text-blue-700 font-bold">MARCH, 15</span></p>
+                <p className="text-base mt-4 text-wrap max-w-48">Your PAYMENT DUE DATE IS <span className="text-yellow-500 font-bold">MARCH, 15</span></p>
             </div>
-            <div className='flex flex-wrap justify-between my-8'>
+            <div className='flex flex-wrap justify-between my-8 text-sm'>
                 <div className='flex items-center gap-2'>
-                    <div className='bg-yellow-400 w-3 h-3'></div>
+                    <div className='bg-green-600 w-4 h-4'></div>
                     <p>TOTAL PAID</p>
                 </div>
                 <div className='flex items-center gap-2'>
-                    <div className='bg-red-600 w-3 h-3'></div>
+                    <div className='bg-red-600 w-4 h-4'></div>
                     <p>DUE</p>
                 </div>
                 <div className='flex flex-wrap items-center gap-2'>
-                    <div className='bg-blue-600 w-3 h-3'></div>
+                    <div className='bg-blue-700 w-4 h-4'></div>
                     <p>BALANCE</p>
                 </div>
             </div>
-            <div className='w-72'>
+            <div className='w-72 mx-auto'>
                 <PieChart data={data} options={options} />
             </div>
         </>

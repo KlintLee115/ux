@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import NavBar from "@/components/NavBar";
+import Image from 'next/image'
+import image from '../../public/abc.webp'
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,7 +18,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} m-5`}>
+      <body className={`${inter.className} relative min-h-[100vh]`}>
+        <Image src={image} className="relative z-10" objectFit="cover" alt="bgimg" fill />
         {children}
       </body>
     </html>

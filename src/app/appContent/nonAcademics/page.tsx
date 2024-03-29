@@ -1,5 +1,5 @@
-import FinancialMgmt from "@/components/main/financial-mgmt";
-import { Card } from "@/helpers/tsxHelper";
+import FinancialMgmt from "@/components/nonAcademics/financial-mgmt";
+import { Card } from "@/components/CardComponent";
 
 const GYM_TIMES: string[] = [] as const
 const GYM_OCCUPANCE_TIMEBASED: string[] = [] as const
