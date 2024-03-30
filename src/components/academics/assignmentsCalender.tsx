@@ -11,7 +11,7 @@ export default function AssignmentsCalender() {
                 newRow.push(<div className="w-[calc(100%/7.2)] justify-center text-xl h-14 border border-black flex items-center"><p className="text-lg">{dayMappings[WEEK[j]]}</p></div>);
             } else {
                 const num = i * 7 + j - 6;
-                num < 32 && newRow.push(<div className="w-[calc(100%/7.2)] border h-32 border-black"><p className="text-xl">{num}</p></div>);
+                num < 32 && newRow.push(<div className="w-[calc(100%/7.2)] border min-h-32 border-black"><p className="text-xl">{num}</p></div>);
             }
         }
         grids.push(newRow);
@@ -19,9 +19,9 @@ export default function AssignmentsCalender() {
 
     grids[3][4] = (
 
-        <div className="w-[calc(100%/7.2)] aspect-square h-32 border border-black">
+        <div className="w-[calc(100%/7.2)] border border-black">
             <p className="text-xl">19</p>
-            <div className="flex flex-col text-sm justify-evenly text-center h-[80%]">
+            <div className="flex flex-col text-sm justify-evenly text-center h-max">
                 <p>CPRG 250 Assignment 1</p>
                 <p>CPSY 200 Assignment 2</p>
             </div>
@@ -30,11 +30,14 @@ export default function AssignmentsCalender() {
 
     grids[2][3] = (
 
-        <div className="w-[calc(100%/7.2)] aspect-square h-32 border border-black">
+        <div className="w-[calc(100%/7.2)] border border-black">
             <p className="text-xl">11</p>
-            <div className="flex flex-col text-sm justify-evenly text-center h-[80%]">
+            <div className="flex flex-col text-sm justify-evenly text-center h-max py-4">
                 <p>CPRG 215 Assignment 1</p>
                 <p>CPSY 216 Assignment 2</p>
+                <p>CPSY 216 Assignment 2</p>
+                <p>CPSY 216 Assignment 2</p>
+
             </div>
         </div>)
 

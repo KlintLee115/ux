@@ -5,16 +5,15 @@ import { usePathname } from "next/navigation";
 
 interface NavLinkProps {
     text: string;
-    href: string;
-    targetBlank?: boolean
+    href: string
 }
 
-const NavLink: React.FC<NavLinkProps> = ({ text, href, targetBlank = false }) => {
+const NavLink: React.FC<NavLinkProps> = ({ text, href }) => {
 
     const pathname = usePathname()
 
     return (
-        <Link className="cursor-pointer relative" href={href}>
+        <Link className="cursor-pointer relative text-white" href={href}>
             <p className={
                 `text-xl font-bold ${href !== "/" && pathname.replace(" ", "").toLowerCase().includes(href.toLowerCase())
                     ? "border-b-[3px] border-white" :
@@ -28,6 +27,7 @@ export default function NavBar() {
     return <nav className="flex justify-between text-4xl gap-14">
         <NavLink href="/appContent/academics" text="Academics" />
         <NavLink href="/appContent/nonAcademics" text="Non Academics" />
+        <NavLink href="/appContent/calendar" text="Calendar" />
         <NavLink href="https://www.sait.ca/student-life/new-students/sait-start" text="Just arrived at SAIT" />
         <NavLink href="/appContent/settings" text="Settings" />
         <NavLink href="/" text="Logout" />

@@ -92,12 +92,12 @@ export default function Home() {
                             <div className="flex justify-center gap-7 mt-3">
                                 <div className="flex flex-col gap-2">
                                     {
-                                        GYM_TIMES.map(time => <p>{time}</p>)
+                                        GYM_TIMES.map(time => <p className="font-semibold">{time}</p>)
                                     }
                                 </div>
                                 <div className="flex flex-col gap-2">
                                     {
-                                        GYM_OCCUPANCE_TIMEBASED.map(status => <p className={`font-semibold ${status === GYM_OCCUPANCE.OCCUPIED ? "text-red-500" : "text-green-400"}`}>{status}</p>)
+                                        GYM_OCCUPANCE_TIMEBASED.map(status => <p className={`font-extrabold text-base ${status === GYM_OCCUPANCE.OCCUPIED ? "text-red-600" : "text-green-600"}`}>{status}</p>)
                                     }
                                 </div>
                             </div>

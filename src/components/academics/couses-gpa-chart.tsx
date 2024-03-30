@@ -26,6 +26,11 @@ export default function CourseMgmt() {
         <h3 className='text-lg font-bold mb-3'>GPA: 3.6</h3>
         <Bar options={
             {
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
                 scales: {
                     y: {
                         grid: {
@@ -49,17 +54,6 @@ export default function CourseMgmt() {
                         }
                     },
                 },
-                plugins: {
-                    legend: {
-                        position: "right",
-                        labels: {
-                            font: {
-                                size: 15,
-                                weight: "bold"
-                            }
-                        },
-                    }
-                },
                 responsive: true,
                 color: "black",
                 font: {
@@ -67,43 +61,17 @@ export default function CourseMgmt() {
                     weight: "bolder"
                 }
             }
-        } data={
-            {
-                labels: ['Courses'],
-                xLabels: ["CPRG250", "KOK"],
-                datasets: [
-                    {
-                        label: 'CPRG250',
-                        data: [3.6],
-                        borderColor: 'red',
-                        backgroundColor: 'red',
-                    },
-                    {
-                        label: 'CPSY250',
-                        data: [3.7],
-                        borderColor: 'green',
-                        backgroundColor: 'green',
-                    },
-                    {
-                        label: 'CPRG123',
-                        data: [3.6],
-                        borderColor: 'blue',
-                        backgroundColor: 'blue',
-                    },
-                    {
-                        label: 'CPRG167',
-                        data: [3.6],
-                        borderColor: 'yellow',
-                        backgroundColor: 'yellow',
-                    },
-                    {
-                        label: 'CPRG121',
-                        data: [4.0],
-                        borderColor: 'purple',
-                        backgroundColor: 'purple',
-                    },
-                ],
-            }
-        } />
+        }
+            data={
+                {
+                    labels: ['CPRG250', 'CPRG203', 'CPSY300', 'PHIL200', 'ABCD123'],
+                    datasets: [
+                        {
+                            data: [3.6, 3.7, 3.0, 3.5, 3.2],
+                            backgroundColor: ['orange', 'green', 'red', 'blue', 'cyan']
+                        },
+                    ],
+                }
+            } />
     </div>;
 }

@@ -22,6 +22,7 @@ const options: ChartOptions<'pie'> = {
                 }
             }
         },
+
     },
 };
 const PieChart: React.FC<PieChartProps> = ({ data, options }) => {
@@ -54,18 +55,28 @@ export default function FinancialMgmt() {
                 <p className="text-base mt-4 text-wrap max-w-48">Your PAYMENT DUE DATE IS <span className="text-yellow-500 font-bold">MARCH, 15</span></p>
             </div>
             <div className='flex flex-wrap justify-between my-8 text-sm'>
+                <div className='flex flex-wrap items-center gap-2'>
+                    <div className='bg-blue-700 w-4 h-4'></div>
+                    <div>
+                        <p>BALANCE</p>
+                        <p>$19.00</p>
+                    </div>
+                </div>
                 <div className='flex items-center gap-2'>
                     <div className='bg-green-600 w-4 h-4'></div>
-                    <p>TOTAL PAID</p>
+                    <div>
+                        <p>TOTAL PAID</p>
+                        <p>$3.00</p>
+                    </div>
                 </div>
                 <div className='flex items-center gap-2'>
                     <div className='bg-red-600 w-4 h-4'></div>
-                    <p>DUE</p>
+                    <div>
+                        <p>DUE</p>
+                        <p>$12.00</p>
+                    </div>
                 </div>
-                <div className='flex flex-wrap items-center gap-2'>
-                    <div className='bg-blue-700 w-4 h-4'></div>
-                    <p>BALANCE</p>
-                </div>
+
             </div>
             <div className='w-72 mx-auto'>
                 <PieChart data={data} options={options} />

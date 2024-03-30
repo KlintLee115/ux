@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "../globals.css";
 import NavBar from "@/components/NavBar";
+import Image from "next/image";
+import image from '../../../public/sait.png'
+import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,12 +19,12 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <div className="relative z-20 p-5">
-            <header className="flex justify-between pb-4 border-white border-b-2 mb-9">
-                <p className="text-4xl">SAIT</p>
+        <>
+            <header className="flex justify-between pb-4 border-white border-b-2 mb-9 items-center">
+                <Link href={"/appContent/academics"}><Image src={image} alt="sait logo" className="w-min cursor-pointer" width={40} height={40} /></Link>
                 <NavBar />
             </header>
             {children}
-        </div>
+        </>
     );
 }
