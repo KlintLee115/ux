@@ -1,6 +1,3 @@
-import Image from "next/image"
-import rightArrow from "../../../../../public/rightArrow.jpg"
-
 export default function Page() {
     return <div className="w-[70vw] mx-auto text-white">
         <h2 className="text-3xl font-semibold mb-3">Your enrolled clubs</h2>
