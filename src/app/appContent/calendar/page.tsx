@@ -5,7 +5,7 @@ import PopUp from "@/components/calender/PopUp";
 import { WEEK, dayMappings } from "@/helpers/helper";
 import { useEffect, useState } from "react";
 
-const BoxSetting = "flex-grow basis-0 flex-shrink-0 border border-black"
+const BoxSetting = "flex-grow basis-0 flex-shrink-0 border-black"
 
 export default function Page() {
 
@@ -35,7 +35,7 @@ export default function Page() {
                     if (num < 32) {
                         if (gridItem.has(num)) {
                             newRow.push(
-                                <div key={`${i}-${j}`} className={`${BoxSetting} min-h-32 ${num < 32 ? "border " : "border-0"}`}>
+                                <div key={`${i}-${j}`} className={`${BoxSetting} min-h-32 border`}>
                                     <p className="text-xl ml-3 mt-3">{num}</p>
                                     {gridItem.get(num)?.map((item, index) => (
                                         <p key={index} className="text-base ml-3 mt-3">{item}</p>
@@ -44,7 +44,7 @@ export default function Page() {
                             );
                         } else {
                             newRow.push(
-                                <div key={`${i}-${j}`} className={`${BoxSetting} min-h-32 ${num < 32 ? "border " : "border-0"}`}>
+                                <div key={`${i}-${j}`} className={`${BoxSetting} min-h-32 border`}>
                                     <p className="text-xl ml-3 mt-3">{num}</p>
                                 </div>
                             );
@@ -52,7 +52,7 @@ export default function Page() {
                     }
                     else {
                         newRow.push(
-                            <div key={`${i}-${j}`} className={`${BoxSetting} min-h-32 ${num < 32 ? "border " : "border-0"}`}>
+                            <div key={`${i}-${j}`} className={`${BoxSetting} min-h-32 border-0`}>
                                 <></>
                             </div>
                         );

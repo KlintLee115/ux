@@ -34,13 +34,13 @@ const PieChart: React.FC<PieChartProps> = ({ data, options }) => {
 };
 
 const data: ChartData<'pie'> = {
-    labels: ['Red', 'Blue', 'Yellow'],
+    labels: ['Red', 'Yellow'],
     datasets: [
         {
             label: 'Amount (CAD $)',
-            data: [12, 19, 3],
-            backgroundColor: ['red', 'blue', 'green'],
-            borderColor: ['red', 'blue', 'green'],
+            data: [12, 3],
+            backgroundColor: ['red', 'blue'],
+            borderColor: ['red', 'blue'],
             borderWidth: 1,
         },
     ],
@@ -54,16 +54,9 @@ export default function FinancialMgmt() {
                 <p className="text-center text-7xl text-yellow-500">!</p>
                 <p className="text-base mt-4 text-wrap max-w-48">Your PAYMENT DUE DATE IS <span className="text-yellow-500 font-bold">MARCH, 15</span></p>
             </div>
-            <div className='flex flex-wrap justify-between my-8 text-sm'>
-                <div className='flex flex-wrap items-center gap-2'>
-                    <div className='bg-blue-700 w-4 h-4'></div>
-                    <div>
-                        <p>BALANCE</p>
-                        <p>$19.00</p>
-                    </div>
-                </div>
+            <div className='flex flex-wrap justify-evenly my-8 text-sm'>
                 <div className='flex items-center gap-2'>
-                    <div className='bg-green-600 w-4 h-4'></div>
+                    <div className='bg-blue-600 w-4 h-4'></div>
                     <div>
                         <p>TOTAL PAID</p>
                         <p>$3.00</p>

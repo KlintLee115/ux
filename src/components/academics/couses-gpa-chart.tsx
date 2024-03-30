@@ -68,7 +68,7 @@ export default function CourseMgmt() {
                     datasets: [
                         {
                             data: [3.6, 3.7, 3.0, 3.5, 3.2],
-                            backgroundColor: ['orange', 'green', 'red', 'blue', 'cyan']
+                            backgroundColor: ['green', 'orange', 'white', 'blue', 'yellow']
                         },
                     ],
                 }

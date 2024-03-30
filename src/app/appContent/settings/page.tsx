@@ -2,8 +2,16 @@
 
 import { Card } from "@/components/CardComponent";
 import AddedItemsNotification, { ActionType, Notifications } from "../../../components/settings/addedItemsNotification";
+import { useMemo, useState } from "react";
+
+const isValidEmailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
+
 
 export default function Page() {
+
+    const [email, setEmail] = useState('')
+
+    const isValidEmail = useMemo(() => email !== "" && !email.match(isValidEmailRegex), [email])
 
     return (
         <Card title="">
@@ -26,8 +34,13 @@ export default function Page() {
 
                         <div>
 
-                            <h5>Email</h5>
-                            <input className="border border-black" type="email" />
+                            <div className="flex justify-between">
+                                <label>Email</label>
+                                <h5 className="inline text-red-800 font-extrabold">{
+                                    isValidEmail && "Invalid"
+                                }</h5>
+                            </div>
+                            <input className="border block border-black" type="email" onChange={event => setEmail(event.target.value)} />
                         </div>
 
                         <div>
@@ -79,14 +92,16 @@ export default function Page() {
                         </div>
                     </div>
                 </div>
-                <button className="block mx-auto mt-16 px-3 py-2 rounded-xl bg-black text-white" onClick={() => {
-                    Notifications.NotificationQueue.push({
-                        action: ActionType.ADD,
-                    });
+                <button disabled={isValidEmail}
+                    className={`block mx-auto mt-16 px-3 py-2 rounded-xl  text-white ${isValidEmail ? "bg-red-500" : "bg-black"}`}
+                    onClick={() => {
+                        Notifications.NotificationQueue.push({
+                            action: ActionType.ADD,
+                        });
 
-                    Notifications.updateNotificationQueue &&
-                        Notifications.updateNotificationQueue();
-                }}>Save</button>
+                        Notifications.updateNotificationQueue &&
+                            Notifications.updateNotificationQueue();
+                    }}>Save</button>
             </div>
         </Card>
     )

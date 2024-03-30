@@ -81,7 +81,7 @@ export default function Home() {
                     </Card>
                 </div>
                 <div className="col-span-2 col-start-7 row-start-3 row-span-1">
-                    <Card title="Housing information" link="efef" contFromCurrDir={false}>
+                    <Card title="Housing information" link="https://www.sait.ca/student-life/residence-and-housing" contFromCurrDir={false}>
                         <></>
                     </Card>
                 </div>
@@ -105,14 +105,12 @@ export default function Home() {
                     </Card>
                 </div>
 
-                {/*  
-
-                <div className="">
+                <div className="col-start-7 col-span-2">
                     <Card title="SAIT Book Store" link="https://www.bkstr.com/saitstore/home" contFromCurrDir={false}>
                         <></>
                     </Card>
                 </div>
-               */}
+
             </div>
         </div >
     );

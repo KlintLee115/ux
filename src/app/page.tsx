@@ -16,7 +16,7 @@ export default function Page() {
             </div>
 
             <Link href={"/appContent/academics"}>
-                <button className="block w-fit mx-auto mt-12 border-white font-semibold border-2 py-4 px-8">LOGIN</button>
+                <button className="block w-fit mx-auto mt-12 border-white text-white font-semibold border-2 py-4 px-8">LOGIN</button>
             </Link>
         </div>
     </>

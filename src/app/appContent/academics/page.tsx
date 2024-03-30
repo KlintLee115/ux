@@ -18,7 +18,17 @@ export default function Home() {
 
                 <div className="col-span-2 col-start-1">
                     <Card title="Courses and GPA">
-                        <CourseMgmt />
+                        <>
+                            <div className="flex flex-wrap justify-evenly mb-9">
+                                <CoursesGpaListing course="CPRG250" gpa={"3.6"} key={"CPRG250"} color="green" />
+                                <CoursesGpaListing course="CPRG203" gpa={"3.7"} key={"CPRG203"} color="orange" />
+                                <CoursesGpaListing course="CPSY300" gpa={"3.0"} key={"CPSY300"} color="white" />
+                                <CoursesGpaListing course="PHIL200" gpa={"3.5"} key={"PHIL200"} color="blue" />
+                                <CoursesGpaListing course="ABCD123" gpa={"3.2"} key={"ABCD123"} color="yellow" />
+
+                            </div>
+                            <CourseMgmt />
+                        </>
                     </Card>
                 </div>
                 <div className="col-span-3 col-start-3">
@@ -29,5 +39,12 @@ export default function Home() {
             </div>
         </div >
     );
+}
+
+function CoursesGpaListing({ course, gpa, color }: { course: string, gpa: string, color: string }) {
+    return <div className="text-center" style={{ color: `${color}`, fontWeight: "bold" }}>
+        <p>{course}</p>
+        <p>{gpa}</p>
+    </div>
 }
 
