@@ -9,7 +9,7 @@ export class Notifications {
 }
 
 export enum ActionType {
-    ADD, REMOVE
+    ADD, ERROR
 }
 
 type Notification = {
@@ -52,7 +52,11 @@ export default () => {
 
     return <div className="fixed top-18 right-5 z-20 flex flex-col gap-4">
         {
-            notificationQueue.map((_, idx) => <h2 className="p-5 bg-green-500 rounded-md text-lg font-semibold" key={idx}>Saved!</h2>)
+            notificationQueue.map((notification, idx) => <h2 className={`p-5 rounded-md text-lg font-semibold
+            ${notification.action === ActionType.ADD ? "bg-green-500 " : "bg-red-500"}`}
+                key={idx}>{
+                    notification.action === ActionType.ADD ? "Saved!" : "Invalid id & password combination"
+                }</h2>)
         }
     </div>
 }
