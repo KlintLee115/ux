@@ -22,14 +22,14 @@ export default function Page() {
                         <div>
                             <h5>Name</h5>
 
-                            <input className="border border-black" />
+                            <input className="border border-black" defaultValue={"Klint Lee"} />
                         </div>
                         <div>
 
                             <h5>Age</h5>
 
 
-                            <input className="border border-black" type="number" />
+                            <input className="border border-black" type="number" defaultValue={20} />
                         </div>
 
                         <div>
@@ -40,14 +40,14 @@ export default function Page() {
                                     isValidEmail && "Invalid"
                                 }</h5>
                             </div>
-                            <input className="border block border-black" type="email" onChange={event => setEmail(event.target.value)} />
+                            <input className="border block border-black" type="email" defaultValue={"abcd@edu.sait.ca"} onChange={event => setEmail(event.target.value)} />
                         </div>
 
                         <div>
 
                             <h5>Phone Number</h5>
 
-                            <input className="border border-black" type="number" />
+                            <input className="border border-black" type="number" defaultValue={123456789} />
                         </div>
 
                     </div>
@@ -57,7 +57,7 @@ export default function Page() {
                             <div className="flex gap-8">
                                 <div className="flex gap-2">
                                     <label htmlFor="">week</label>
-                                    <input type="checkbox" />
+                                    <input type="checkbox" defaultChecked />
                                 </div>
                                 <div className="flex gap-2">
 
@@ -75,17 +75,36 @@ export default function Page() {
                                 <div className="flex gap-8">
                                     <div className="flex gap-2">
                                         <label htmlFor="">week</label>
-                                        <input type="checkbox" />
+                                        <input type="checkbox" defaultChecked />
                                     </div>
                                     <div className="flex gap-2">
 
                                         <label htmlFor="">2 weeks</label>
-                                        <input type="checkbox" />
+                                        <input type="checkbox" defaultChecked />
                                     </div>
                                     <div className="flex gap-2">
 
                                         <label htmlFor="">month</label>
                                         <input type="checkbox" />
+                                    </div>
+                                </div>
+                                <div className="mt-10">
+                                    <h5>How would you like to be reminded?</h5>
+                                    <div className="flex gap-8">
+                                        <div className="flex gap-2">
+                                            <label htmlFor="">WhatSapp</label>
+                                            <input type="checkbox" />
+                                        </div>
+                                        <div className="flex gap-2">
+
+                                            <label htmlFor="">Email</label>
+                                            <input type="checkbox" defaultChecked />
+                                        </div>
+                                        <div className="flex gap-2">
+
+                                            <label htmlFor="">SMS</label>
+                                            <input type="checkbox" />
+                                        </div>
                                     </div>
                                 </div>
                             </div>

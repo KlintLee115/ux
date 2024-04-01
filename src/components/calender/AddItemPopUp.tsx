@@ -14,7 +14,7 @@ import {
 } from "@/components/ui/popover"
 import { useState } from "react"
 
-export default function PopUp({ setGridsItem, isPoppedUp, setIsPoppedUp }: { setGridsItem: React.Dispatch<React.SetStateAction<Map<number, string[]>>>, isPoppedUp: boolean, setIsPoppedUp: React.Dispatch<React.SetStateAction<boolean>> }) {
+export default function AddItemPopUp({ setGridsItem, isPoppedUp, setIsPoppedUp }: { setGridsItem: React.Dispatch<React.SetStateAction<Map<number, string[]>>>, isPoppedUp: boolean, setIsPoppedUp: React.Dispatch<React.SetStateAction<boolean>> }) {
     const [date, setDate] = useState<Date>(new Date())
     const [calenderOpen, setIsCalendarOpen] = useState(false)
     const [event, setEvent] = useState<string | undefined>()

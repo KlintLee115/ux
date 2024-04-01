@@ -1,7 +1,10 @@
 "use client"
 
 import { Card } from "@/components/CardComponent";
-import PopUp from "@/components/calender/PopUp";
+import AddItemPopUp from "@/components/calender/AddItemPopUp";
+import PopUp from "@/components/calender/AddItemPopUp";
+import SetReminderPopUp from "@/components/calender/SetReminderPopUp";
+import AddedItemsNotification from "@/components/settings/addedItemsNotification";
 import { WEEK, dayMappings } from "@/helpers/helper";
 import { useEffect, useState } from "react";
 
@@ -9,11 +12,13 @@ const BoxSetting = "flex-grow basis-0 flex-shrink-0 border-black"
 
 export default function Page() {
 
-    const [isPoppedUp, setIsPoppedUp] = useState(false)
+    const [isReminderPoppedUp, setIsReminderPoppedUp] = useState(false)
+    const [isAddItemPoppedUp, setIsAddItemPoppedUp] = useState(false)
+
     const [grids, setGrids] = useState<JSX.Element[][]>([])
 
     const [gridItem, setGridItem] = useState<Map<number, string[]>>(new Map([
-        [11, ["CPRG 250 Assignment 1", "CPSY 200 Assignment 2"]],
+        [11, ["Tuition deadline 1", "SAIT trojan badminton tournament"]],
         [19, ["CPRG 215 Assignment 1", "CPRG 215 Assignment 1", "CPRG 215 Assignment 1", "CPRG 215 Assignment 1"]]
     ]))
 
@@ -67,15 +72,28 @@ export default function Page() {
 
 
     return (
-        <Card title="">
-            <div className="text-black relative w-[calc(100%-5vw)] mx-auto">
-                <div className={`${isPoppedUp ? "blur-lg" : ""}`} onClick={() => setIsPoppedUp(false)}>
-                    {grids.map(row => <div className="flex justify-center">{row}</div>)}
-                </div>
-                <button className={`text-white absolute bottom-0 right-0 bg-black p-5  rounded-xl font-bold ${isPoppedUp ? "blur-lg" : ""}`} onClick={() => setIsPoppedUp(true)}>Add item</button>
-                <PopUp setGridsItem={setGridItem} isPoppedUp={isPoppedUp} setIsPoppedUp={setIsPoppedUp} />
+        <>
+            <AddedItemsNotification />
 
-            </div>
-        </Card>
+            <Card title="">
+
+                <div className="text-black relative w-[calc(100%-5vw)] mx-auto">
+                    <div className={`${isAddItemPoppedUp || isReminderPoppedUp ? "blur-lg" : ""}`} onClick={() => {
+                        setIsAddItemPoppedUp(false)
+                        setIsReminderPoppedUp(false)
+                    }
+                    }>
+                        {grids.map(row => <div className="flex justify-center">{row}</div>)}
+                    </div>
+                    <div className="absolute text-white bottom-0 right-0 flex gap-5">
+                        <button className={` bg-black p-5  rounded-xl font-bold ${isAddItemPoppedUp || isReminderPoppedUp ? "blur-lg" : ""}`} onClick={() => setIsReminderPoppedUp(true)}>Set reminder</button>
+                        <button className={` bg-black p-5  rounded-xl font-bold ${isAddItemPoppedUp || isReminderPoppedUp ? "blur-lg" : ""}`} onClick={() => setIsAddItemPoppedUp(true)}>Add item</button>
+                    </div>
+                    <AddItemPopUp setGridsItem={setGridItem} isPoppedUp={isAddItemPoppedUp} setIsPoppedUp={setIsAddItemPoppedUp} />
+                    <SetReminderPopUp setGridsItem={setGridItem} isPoppedUp={isReminderPoppedUp} setIsPoppedUp={setIsReminderPoppedUp} />
+
+                </div>
+            </Card>
+        </>
     )
 }

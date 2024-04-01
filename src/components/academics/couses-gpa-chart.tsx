@@ -21,7 +21,7 @@ ChartJS.register(
     Legend
 );
 
-export default function CourseMgmt() {
+export default function CourseGpaChart() {
     return <div className='w-[500px] mx-auto'>
         <h3 className='text-lg font-bold mb-3'>GPA: 3.6</h3>
         <Bar options={

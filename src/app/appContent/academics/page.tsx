@@ -1,9 +1,10 @@
-import CourseMgmt from "@/components/academics/couses-gpa-chart";
+"use client"
+
+import NetworkDiagram from "@/components/academics/courses-progression-network";
+import CourseGpaChart from "@/components/academics/couses-gpa-chart";
 import { Card } from "@/components/CardComponent";
-import AssignmentsByCourses from "../../../components/academics/assignment";
 
 export default function Home() {
-
 
     return (
         <div>
@@ -27,13 +28,13 @@ export default function Home() {
                                 <CoursesGpaListing course="ABCD123" gpa={"3.2"} key={"ABCD123"} color="yellow" />
 
                             </div>
-                            <CourseMgmt />
+                            <CourseGpaChart />
                         </>
                     </Card>
                 </div>
                 <div className="col-span-3 col-start-3">
-                    <Card title="Assignments by Course" contFromCurrDir={false} link="https://learn.sait.ca/d2l/home">
-                        <AssignmentsByCourses />
+                    <Card title="Courses Progression" contFromCurrDir={false} link="https://www.sait.ca/programs-and-courses/diplomas/software-development#courses">
+                        <NetworkDiagram />
                     </Card>
                 </div>
             </div>
