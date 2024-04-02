@@ -28,6 +28,9 @@ import { useEffect, useState } from "react";
 
 const BoxSetting = "flex-grow basis-0 flex-shrink-0 border-black"
 
+const isDateMatch = (date1: Date, date2: Date) => date1.getDate() === date2.getDate() &&
+    date1.getMonth() === date2.getMonth() && date1.getFullYear() === date2.getFullYear()
+
 export default function Page() {
 
     const [year, setYear] = useState<typeof YEARS[number]>(2024)
@@ -45,14 +48,7 @@ export default function Page() {
         [new Date(2024, 5, 28, 7, 25), ["CPRG 215 Assignment 1", "CPRG 215 Assignment 1"]]
     ]))
 
-    const gridItemHasDate = (selectedDate: Date) => Array.from(gridItem.keys()).some(datetime => {
-
-        const monthMatch = datetime.getMonth() === selectedDate.getMonth()
-        const dayMatch = datetime.getDate() === selectedDate.getDate()
-        const yearMatch = datetime.getFullYear() === selectedDate.getFullYear()
-
-        return monthMatch && dayMatch && yearMatch
-    })
+    const gridItemHasDate = (selectedDate: Date) => Array.from(gridItem.keys()).some(datetime => isDateMatch(selectedDate, datetime))
 
     useEffect(() => {
 
@@ -75,7 +71,7 @@ export default function Page() {
                     if (num < 32) {
                         if (gridItemHasDate(currBoxDate)) {
 
-                            const matchingKeysWithTime = Array.from(gridItem.keys()).filter(date => date.getDate() === currBoxDate.getDate()).sort((a, b) => a.getTime() - b.getTime());
+                            const matchingKeysWithTime = Array.from(gridItem.keys()).filter(date => isDateMatch(date, currBoxDate)).sort((a, b) => a.getTime() - b.getTime());
 
                             newRow.push(
                                 <div key={`${i}-${j}`} className={`${BoxSetting} border pb-5`}>
