@@ -13,52 +13,56 @@ import {
     PopoverTrigger,
 } from "@/components/ui/popover"
 import { useState } from "react"
+import { TimePickerInput } from "@/lib/time-picker-input"
 
-export default function AddItemPopUp({ setGridsItem, isPoppedUp, setIsPoppedUp }: { setGridsItem: React.Dispatch<React.SetStateAction<Map<number, string[]>>>, isPoppedUp: boolean, setIsPoppedUp: React.Dispatch<React.SetStateAction<boolean>> }) {
-    const [date, setDate] = useState<Date>(new Date())
+export default function AddItemPopUp({ setGridsItem, isPoppedUp, setIsPoppedUp }: { setGridsItem: React.Dispatch<React.SetStateAction<Map<Date, string[]>>>, isPoppedUp: boolean, setIsPoppedUp: React.Dispatch<React.SetStateAction<boolean>> }) {
+    const [date, setDate] = useState<Date | undefined>()
     const [calenderOpen, setIsCalendarOpen] = useState(false)
     const [event, setEvent] = useState<string | undefined>()
 
     return (
-        <div className={`${isPoppedUp ? "scale-100" : 'scale-0'} transition-all duration-300 bg-white text-black w-64 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 mx-auto p-5 rounded-lg`}>
-            <button className="ml-auto w-min text-3xl mb-7 block" onClick={() => setIsPoppedUp(false)}>X</button>
+        <div className={`${isPoppedUp ? "scale-100" : 'scale-0'} transition-all duration-300 bg-white text-black absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 mx-auto p-5 px-20 rounded-lg`}>
+            <button className="absolute top-3 w-min text-3xl mb-7 right-8" onClick={() => setIsPoppedUp(false)}>X</button>
             <div className="mt-12 items-center">
                 <label htmlFor="" className="mr-4">Pick a date: </label>
                 <RequiredError display={!date} />
             </div>
-            <div className="flex items-center">
-                <Popover open={calenderOpen}>
-                    <PopoverTrigger>
-                        <Button
-                            onClick={() => setIsCalendarOpen(!calenderOpen)}
-                            variant={"outline"}
-                            className={cn(
-                                "justify-start text-left font-normal w-min",
-                                !date && "text-muted-foreground"
-                            )}
-                        >
-                            <CalendarIcon className="mr-2 h-4 w-4" />
-                            {date ? format(date, "PPP") : <span>Pick a date</span>}
-                        </Button>
-                    </PopoverTrigger>
-                    <PopoverContent className="w-auto p-0">
-                        <Calendar
-                            mode="single"
-                            selected={date}
-                            onSelect={date => {
-                                if (date) {
-                                    setDate(date)
-                                    setIsCalendarOpen(false)
-                                }
+            <Popover open={calenderOpen}>
+                <PopoverTrigger>
+                    <Button
+                        onClick={() => setIsCalendarOpen(!calenderOpen)}
+                        variant={"outline"}
+                        className={cn(
+                            "justify-start text-left font-normal w-min",
+                            !date && "text-muted-foreground"
+                        )}
+                    >
+                        <CalendarIcon className="mr-2 h-4 w-4" />
+                        {date ? format(date, "PPP") : <span>Pick a date and time</span>}
+                    </Button>
+                </PopoverTrigger>
+                <PopoverContent className="w-auto p-0 pb-3">
+                    <Calendar
+                        mode="single"
+                        selected={date}
+                        onSelect={date => {
+                            if (date) {
+                                setDate(date)
+                                setIsCalendarOpen(false)
                             }
-                            }
-                            initialFocus
-                        />
-                    </PopoverContent>
-                </Popover>
-                <RequiredError display={!date} />
+                        }
+                        }
+                        initialFocus
+                    />
+                    <div className="flex gap-1 justify-center items-center">
+                        <TimePickerInput date={date} setDate={setDate} picker="hours" />
+                        <p>:</p>
+                        <TimePickerInput date={date} setDate={setDate} picker="minutes" />
+                    </div>
+                </PopoverContent>
 
-            </div >
+            </Popover>
+
             <div className="mt-12 items-center">
                 <label htmlFor="" className="mr-4">Enter the event: </label>
                 <RequiredError display={!event} />
@@ -71,15 +75,13 @@ export default function AddItemPopUp({ setGridsItem, isPoppedUp, setIsPoppedUp }
                     if (event && date) {
 
                         setGridsItem(items => {
-                            const newItems = new Map<number, string[]>()
+                            const newItems = new Map<Date, string[]>()
 
                             items.forEach((value, key) => newItems.set(key, [...value]));
 
-                            const selDate = date?.getDate()
-
-                            const itemsAtdate = newItems.get(selDate) ?? []
+                            const itemsAtdate = newItems.get(date) ?? []
                             itemsAtdate.push(event)
-                            newItems.set(selDate, itemsAtdate)
+                            newItems.set(date, itemsAtdate)
 
                             return newItems
                         })

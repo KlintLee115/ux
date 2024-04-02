@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import { Notifications, ActionType } from "../settings/addedItemsNotification";
-export default function SetReminderPopUp({ isPoppedUp, setIsPoppedUp }: { setGridsItem: React.Dispatch<React.SetStateAction<Map<number, string[]>>>, isPoppedUp: boolean, setIsPoppedUp: React.Dispatch<React.SetStateAction<boolean>> }) {
+export default function SetReminderPopUp({ isPoppedUp, setIsPoppedUp }: { setGridsItem: React.Dispatch<React.SetStateAction<Map<Date, string[]>>>, isPoppedUp: boolean, setIsPoppedUp: React.Dispatch<React.SetStateAction<boolean>> }) {
 
     const [inputNum, setInputNum] = React.useState(NaN)
 
