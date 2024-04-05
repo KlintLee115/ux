@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { Dispatch, SetStateAction } from "react";
 
 interface NavLinkProps {
     text: string;
@@ -23,14 +24,18 @@ const NavLink: React.FC<NavLinkProps> = ({ text, href }) => {
     );
 }
 
-export default function NavBar() {
-    return <nav className="flex justify-between text-4xl gap-14">
+export default function NavBar({ setIsOverlayOn }: { setIsOverlayOn: Dispatch<SetStateAction<boolean>> }) {
+    return <nav className="flex justify-between items-center text-4xl gap-14">
         <NavLink href="/appContent/academics" text="Academics" />
         <NavLink href="/appContent/nonAcademics" text="Non Academics" />
         <NavLink href="/appContent/calendar" text="Calendar" />
         <NavLink href="https://www.sait.ca/student-life/new-students/sait-start" text="Just arrived at SAIT" />
         <NavLink href="/appContent/settings" text="Settings" />
         <NavLink href="/" text="Logout" />
+
+        <h3 onClick={() => setIsOverlayOn(true)} className="cursor-pointer text-red-400 border-[3px] flex justify-center items-center border-red-400 rounded-full w-12 aspect-square">
+            ?
+        </h3>
 
     </nav>
 }
