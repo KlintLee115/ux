@@ -15,24 +15,24 @@ export default function Home() {
                 </p>
             </Card>
 
-            <div className="grid grid-cols-5 mt-6 grid-rows-1 gap-6 justify-center items-start">
+            <div className="grid grid-cols-14 mt-6 grid-rows-1 justify-evenly items-start">
 
-                <div className="col-span-2 col-start-1">
+                <div className="col-span-3 col-start-2">
                     <Card title="Courses and GPA">
                         <>
                             <div className="flex flex-wrap justify-evenly mb-9">
                                 <CoursesGpaListing course="CPRG250" gpa={"3.6"} key={"CPRG250"} color="green" />
-                                <CoursesGpaListing course="CPRG203" gpa={"3.7"} key={"CPRG203"} color="orange" />
-                                <CoursesGpaListing course="CPSY300" gpa={"3.0"} key={"CPSY300"} color="white" />
+                                <CoursesGpaListing course="CPRG203" gpa={"3.7"} key={"CPRG203"} color="brown" />
+                                <CoursesGpaListing course="CPSY300" gpa={"3.0"} key={"CPSY300"} color="purple" />
                                 <CoursesGpaListing course="PHIL200" gpa={"3.5"} key={"PHIL200"} color="blue" />
-                                <CoursesGpaListing course="ABCD123" gpa={"3.2"} key={"ABCD123"} color="yellow" />
+                                <CoursesGpaListing course="ABCD123" gpa={"3.2"} key={"ABCD123"} color="red" />
 
                             </div>
                             <CourseGpaChart />
                         </>
                     </Card>
                 </div>
-                <div className="col-span-3 col-start-3">
+                <div className="col-span-9 col-start-6">
                     <Card title="Courses Progression" contFromCurrDir={false} link="https://www.sait.ca/programs-and-courses/diplomas/software-development#courses">
                         <NetworkDiagram />
                     </Card>
@@ -43,8 +43,8 @@ export default function Home() {
 }
 
 function CoursesGpaListing({ course, gpa, color }: { course: string, gpa: string, color: string }) {
-    return <div className="text-center" style={{ color: `${color}`, fontWeight: "bold" }}>
-        <p>{course}</p>
+    return <div className="text-center" style={{ color: `${color}` }}>
+        <p style={{ fontWeight: "bolder" }}>{course}</p>
         <p>{gpa}</p>
     </div>
 }

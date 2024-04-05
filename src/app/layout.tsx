@@ -26,7 +26,7 @@ export default function RootLayout({
         "min-h-screen bg-background font-sans antialiased",
         fontSans.variable
       )} relative min-h-[100vh] `}>
-        <Image src={image} alt="bgimg" fill className="blur-[25px] " />
+        <div className="absolute bg-blue-800 inset-0"></div>
         <div className="relative z-20 p-5">
           {children}
         </div>

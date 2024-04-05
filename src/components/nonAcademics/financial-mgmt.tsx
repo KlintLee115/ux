@@ -51,8 +51,8 @@ export default function FinancialMgmt() {
     return (
         <>
             <div className="flex justify-center">
-                <p className="text-center text-7xl text-yellow-500">!</p>
-                <p className="text-base mt-4 text-wrap max-w-48">Your PAYMENT DUE DATE IS <span className="text-yellow-500 font-bold">MARCH, 15</span></p>
+                <p className="text-center text-7xl text-red-700">!</p>
+                <p className="text-base mt-4 text-wrap max-w-48">Your PAYMENT DUE DATE IS <span className="text-red-800 font-extrabold">MARCH, 15</span></p>
             </div>
             <div className='flex flex-wrap justify-evenly my-8 text-sm'>
                 <div className='flex items-center gap-2'>

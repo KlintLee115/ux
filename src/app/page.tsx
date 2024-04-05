@@ -49,7 +49,8 @@ export default function Page() {
     return <div>
         <AddedItemsNotification />
         <Image src={image} alt="sait logo" className="w-min cursor-pointer" width={40} height={40} />
-        <div className="relative border-2 w-3/5 mx-auto mt-16 border-white py-14 text-center">
+        <p className='text-white text-center text-4xl mt-28'>Find SAIT features easily</p>
+        <div className="relative border-2 w-3/5 mx-auto mt-8 border-white py-14 text-center">
 
             <input placeholder="Please enter your student ID"
                 onKeyDown={handleKeyPress}

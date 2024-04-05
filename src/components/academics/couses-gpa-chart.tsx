@@ -68,7 +68,7 @@ export default function CourseGpaChart() {
                     datasets: [
                         {
                             data: [3.6, 3.7, 3.0, 3.5, 3.2],
-                            backgroundColor: ['green', 'orange', 'white', 'blue', 'yellow']
+                            backgroundColor: ['green', '#963000', 'purple', 'blue', 'red']
                         },
                     ],
                 }
