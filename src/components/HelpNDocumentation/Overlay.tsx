@@ -11,11 +11,13 @@ export default ({ setIsOverlayOn }: { setIsOverlayOn: Dispatch<SetStateAction<bo
         </li>
     }
     return <>
-        <h1 className="text-5xl border-black border-b-4 inline">About & Pages Directory</h1>
-
+        <div className="flex text-5xl justify-between">
+            <h1 className="border-black border-b-4 inline">About & Pages Directory</h1>
+            <h3 className="cursor-pointer" onClick={() => setIsOverlayOn(false)}>X</h3>
+        </div>
         <div className="mt-8">
             <h1 className="text-4xl">About</h1>
-            <h4 className="text-lg">This application is not meant to replace SAIT's services, but to help stakeholders in navigating and finding
+            <h4 className="text-lg">EduNexus is not meant to replace SAIT's services, but to help stakeholders in navigating and finding
                 features of SAIT's platforms easily. How? By consolidating the core features into one platform, and redirect users to the corresponding SAIT's official pages
                 for more information.</h4>
         </div>

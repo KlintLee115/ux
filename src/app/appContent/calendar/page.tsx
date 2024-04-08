@@ -122,12 +122,12 @@ export default function Page() {
 
                 <div className="text-black relative w-[calc(100%-5vw)] mx-auto">
                     <div className="flex justify-center gap-4 mb-5">
-                        <select defaultValue={month} onChange={event => setMonth(event.target.value as typeof MONTHS[number])}>
+                        <select className="border border-black" defaultValue={month} onChange={event => setMonth(event.target.value as typeof MONTHS[number])}>
                             {
                                 MONTHS.map(month => <option value={month}>{month}</option>)
                             }
                         </select>
-                        <select defaultValue={year} onChange={event => setYear(parseInt(event.target.value) as typeof YEARS[number])}>
+                        <select className="border border-black" defaultValue={year} onChange={event => setYear(parseInt(event.target.value) as typeof YEARS[number])}>
                             {
                                 YEARS.map(year => <option value={year}>{year}</option>)
                             }

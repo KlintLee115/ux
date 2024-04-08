@@ -27,7 +27,10 @@ export default function RootLayout({
             </div>
             <div className={`${overlayOn && "blur-sm relative z-10"}`}>
                 <header className="flex justify-between pb-4 border-white border-b-2 mb-9 items-center">
-                    <Link href={"/appContent/academics"}><Image src={image} alt="sait logo" className="w-min cursor-pointer" width={40} height={40} /></Link>
+                    <div className="flex items-center gap-3">
+                        <Link href={"/appContent/academics"}><Image src={image} alt="sait logo" className="w-min cursor-pointer" width={40} height={40} /></Link>
+                        <h3 className="text-3xl text-white">EduNexus</h3>
+                    </div>
                     <NavBar setIsOverlayOn={setIsOverlayOn} />
                 </header>
                 <div className={`${overlayOn && "blur-md relative z-10"}`} onClick={() => setIsOverlayOn(false)}>
