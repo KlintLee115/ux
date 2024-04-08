@@ -64,7 +64,7 @@ export default function CourseGpaChart() {
         }
             data={
                 {
-                    labels: ['CPRG250', 'CPRG203', 'CPSY300', 'PHIL200', 'ABCD123'],
+                    labels: ['CPRG250', 'CPRG203', 'CPSY300', 'PHIL200', 'CPRG216'],
                     datasets: [
                         {
                             data: [3.6, 3.7, 3.0, 3.5, 3.2],
