@@ -1,4 +1,5 @@
 import * as d3 from "d3";
+import dynamic from "next/dynamic";
 import { useRef, useEffect } from "react";
 
 const completedCourses = ["MATH237", "CPNT217", "CPRG213", "COMM238", "CPRG216"]
@@ -181,8 +182,8 @@ const NetworkDiagram = () => {
     );
 }
 
-export default () => {
-    return <div>
+export default dynamic(() =>
+    Promise.resolve(() => <div>
         <div className="mb-5 mt-10 flex items-center justify-evenly">
             <div className="flex items-center gap-3">
                 <div className="w-5 h-full bg-[#00ff66] aspect-square"></div>
@@ -194,5 +195,7 @@ export default () => {
             </div>
         </div>
         <NetworkDiagram />
-    </div>
+    </div>), {
+    ssr: false
 }
+)
