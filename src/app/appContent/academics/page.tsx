@@ -15,9 +15,9 @@ export default function Home() {
                 </p>
             </Card>
 
-            <div className="grid grid-cols-14 mt-6 grid-rows-1 justify-evenly items-start">
+            <div className="grid grid-cols-25 mt-6 grid-rows-1 items-start">
 
-                <div className="col-span-3 col-start-2">
+                <div className="col-span-9 col-start-1">
                     <Card title="Courses and GPA">
                         <>
                             <div className="flex flex-wrap justify-evenly mb-9">
@@ -25,14 +25,14 @@ export default function Home() {
                                 <CoursesGpaListing course="CPRG203" gpa={"3.7"} key={"CPRG203"} color="brown" />
                                 <CoursesGpaListing course="CPSY300" gpa={"3.0"} key={"CPSY300"} color="purple" />
                                 <CoursesGpaListing course="PHIL200" gpa={"3.5"} key={"PHIL200"} color="blue" />
-                                <CoursesGpaListing course="ABCD123" gpa={"3.2"} key={"ABCD123"} color="red" />
+                                <CoursesGpaListing course="CPRG216" gpa={"3.2"} key={"CPRG216"} color="red" />
 
                             </div>
                             <CourseGpaChart />
                         </>
                     </Card>
                 </div>
-                <div className="col-span-9 col-start-6">
+                <div className="col-start-11 col-span-full">
                     <Card title="Courses Progression" contFromCurrDir={false} link="https://www.sait.ca/programs-and-courses/diplomas/software-development#courses">
                         <NetworkDiagram />
                     </Card>

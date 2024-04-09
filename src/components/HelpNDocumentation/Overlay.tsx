@@ -6,24 +6,24 @@ export default ({ setIsOverlayOn }: { setIsOverlayOn: Dispatch<SetStateAction<bo
 
     function TitleText({ title, text, href }: { title: string, text: string, href: string }) {
         return <li>
-            <Link onClick={() => setIsOverlayOn(false)} href={href} className="text-2xl"><h2>{title + " page"}</h2></Link>
-            <h4 className="text-lg">{text}</h4>
+            <Link onClick={() => setIsOverlayOn(false)} href={href} className="text-xl"><h2>{title + " page"}</h2></Link>
+            <h4 className="text-base">{text}</h4>
         </li>
     }
     return <>
         <div className="flex text-5xl justify-between">
-            <h1 className="border-black border-b-4 inline">About & Pages Directory</h1>
+            <h2 className="border-black border-b-4 inline text-4xl">About & Pages Directory</h2>
             <h3 className="cursor-pointer" onClick={() => setIsOverlayOn(false)}>X</h3>
         </div>
-        <div className="mt-8">
-            <h1 className="text-4xl">About</h1>
-            <h4 className="text-lg">EduNexus is not meant to replace SAIT's services, but to help stakeholders in navigating and finding
+        <div className="mt-4">
+            <h1 className="text-3xl">About</h1>
+            <h4 className="text-base">EduNexus is not meant to replace SAIT's services, but to help stakeholders in navigating and finding
                 features of SAIT's platforms easily. How? By consolidating the core features into one platform, and redirect users to the corresponding SAIT's official pages
                 for more information.</h4>
         </div>
 
         <div className="mt-8">
-            <h1 className="text-4xl">Pages Directory</h1>
+            <h1 className="text-3xl">Pages Directory</h1>
 
             <ul className="flex flex-col text-2xl gap-8 overflow-y-auto list-disc">
                 <TitleText title="Academics" href="/appContent/academics"
