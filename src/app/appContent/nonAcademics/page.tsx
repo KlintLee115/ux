@@ -86,7 +86,7 @@ export default function Home() {
                     </Card>
                 </div>
                 <div className="col-start-5 col-span-2 row-start-1">
-                    <Card title="SAIT Gym Occupance" link="blabla" contFromCurrDir={false}>
+                    <Card title="SAIT Gym Occupance" link="https://saittrojans.skedda.com/booking?spacefeatureids=badd0e9fc604486886643c34475e2d9d&viewtype=2" contFromCurrDir={false}>
                         <div>
                             <p className="text-center text-lg font-semibold">28th April 2024</p>
                             <div className="flex justify-center gap-7 mt-3">
