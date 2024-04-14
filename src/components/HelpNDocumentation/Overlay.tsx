@@ -1,8 +1,10 @@
 import Link from "next/link"
 import { Dispatch, SetStateAction } from "react"
+import { useCookies } from "react-cookie";
 
 export default ({ setIsOverlayOn }: { setIsOverlayOn: Dispatch<SetStateAction<boolean>> }) => {
 
+    const [cookies, setCookie] = useCookies(['overlayOn']);
 
     function TitleText({ title, text, href }: { title: string, text: string, href: string }) {
         return <li>
@@ -10,10 +12,17 @@ export default ({ setIsOverlayOn }: { setIsOverlayOn: Dispatch<SetStateAction<bo
             <h4 className="text-base">{text}</h4>
         </li>
     }
-    return <>
+    return <div>
         <div className="flex text-5xl justify-between">
             <h2 className="border-black border-b-4 inline text-4xl">About & Pages Directory</h2>
-            <h3 className="cursor-pointer" onClick={() => setIsOverlayOn(false)}>X</h3>
+            <div className="flex gap-5 text-xl items-center">
+                <button onClick={() => {
+                    setIsOverlayOn(false)
+                    setCookie("overlayOn", false)
+                }
+                }>Stop showing</button>
+                <button className="text-3xl" onClick={() => setIsOverlayOn(false)}>X</button>
+            </div>
         </div>
         <div className="mt-4">
             <h1 className="text-3xl">About</h1>
@@ -36,5 +45,5 @@ export default ({ setIsOverlayOn }: { setIsOverlayOn: Dispatch<SetStateAction<bo
                 <TitleText title="Logout" href="/" text="Log out of the current account." />
             </ul>
         </div>
-    </>
+    </div>
 }

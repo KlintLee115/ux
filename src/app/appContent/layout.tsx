@@ -1,14 +1,14 @@
 "use client"
 
-import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "../globals.css";
 import NavBar from "@/components/NavBar";
 import Image from "next/image";
 import image from '../../../public/sait.png'
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Overlay from "@/components/HelpNDocumentation/Overlay";
+import { useCookies } from "react-cookie"
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,7 +18,8 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
 
-    const [overlayOn, setIsOverlayOn] = useState(true)
+    const [cookies] = useCookies(['overlayOn']);
+    const [overlayOn, setIsOverlayOn] = useState(cookies.overlayOn)
 
     return (
         <>
