@@ -9,7 +9,20 @@ const isValidEmailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
 
 export default function Page() {
 
-    const [email, setEmail] = useState('')
+    const [email, setEmail] = useState('abcd@edu.sait.ca')
+    const [name, setName] = useState('Klint Lee')
+    const [age, setAge] = useState(20)
+    const [number, setNumber] = useState(123456789)
+    const [debtWeek, setDebtWeek] = useState(false)
+    const [debt2Weeks, setDebt2Weeks] = useState(false)
+    const [debtMonth, setDebtMonth] = useState(true)
+    const [assignmentWeek, setAssignmentWeek] = useState(true)
+    const [assignment2Weeks, setAssignments2Weeks] = useState(false)
+    const [assignmentMonth, setAssignmentMonth] = useState(false)
+    const [reminderWs, setRemindWs] = useState(true)
+    const [remindEmail, setRemindEmail] = useState(true)
+    const [remindSms, setRemindSms] = useState(false)
+
 
     const isValidEmail = useMemo(() => email !== "" && !email.match(isValidEmailRegex), [email])
 
@@ -22,14 +35,14 @@ export default function Page() {
                         <div>
                             <h5>Name</h5>
 
-                            <input className="border border-black" defaultValue={"Klint Lee"} />
+                            <input className="border border-black" defaultValue={name} onChange={event => setName(event.target.value)} />
                         </div>
                         <div>
 
                             <h5>Age</h5>
 
 
-                            <input className="border border-black" type="number" defaultValue={20} />
+                            <input className="border border-black" type="number" defaultValue={age} onChange={event => setAge(event.target.valueAsNumber)} />
                         </div>
 
                         <div>
@@ -40,14 +53,14 @@ export default function Page() {
                                     isValidEmail && "Invalid"
                                 }</h5>
                             </div>
-                            <input className="border block border-black" type="email" defaultValue={"abcd@edu.sait.ca"} onChange={event => setEmail(event.target.value)} />
+                            <input className="border block border-black" type="email" defaultValue={email} onChange={event => setEmail(event.target.value)} />
                         </div>
 
                         <div>
 
                             <h5>Phone Number</h5>
 
-                            <input className="border border-black" type="number" defaultValue={123456789} />
+                            <input className="border border-black" type="number" defaultValue={number} onChange={event => setNumber(event.target.valueAsNumber)} />
                         </div>
 
                     </div>
@@ -57,17 +70,17 @@ export default function Page() {
                             <div className="flex gap-8">
                                 <div className="flex gap-2">
                                     <label htmlFor="">week</label>
-                                    <input type="checkbox" defaultChecked />
+                                    <input type="checkbox" checked={debtWeek} onChange={event => setDebtWeek(event.target.checked)} />
                                 </div>
                                 <div className="flex gap-2">
 
                                     <label htmlFor="">2 weeks</label>
-                                    <input type="checkbox" />
+                                    <input type="checkbox" checked={debt2Weeks} onChange={event => setDebt2Weeks(event.target.checked)} />
                                 </div>
                                 <div className="flex gap-2">
 
                                     <label htmlFor="">month</label>
-                                    <input type="checkbox" />
+                                    <input type="checkbox" checked={debtMonth} onChange={event => setDebtMonth(event.target.checked)} />
                                 </div>
                             </div>
                             <div className="mt-10">
@@ -75,17 +88,17 @@ export default function Page() {
                                 <div className="flex gap-8">
                                     <div className="flex gap-2">
                                         <label htmlFor="">week</label>
-                                        <input type="checkbox" defaultChecked />
+                                        <input type="checkbox" checked={assignmentWeek} onChange={event => setAssignmentWeek(event.target.checked)} />
                                     </div>
                                     <div className="flex gap-2">
 
                                         <label htmlFor="">2 weeks</label>
-                                        <input type="checkbox" defaultChecked />
+                                        <input type="checkbox" checked={assignment2Weeks} onChange={event => setAssignments2Weeks(event.target.checked)} />
                                     </div>
                                     <div className="flex gap-2">
 
                                         <label htmlFor="">month</label>
-                                        <input type="checkbox" />
+                                        <input type="checkbox" checked={assignmentMonth} onChange={event => setAssignmentMonth(event.target.checked)} />
                                     </div>
                                 </div>
                                 <div className="mt-10">
@@ -93,17 +106,17 @@ export default function Page() {
                                     <div className="flex gap-8">
                                         <div className="flex gap-2">
                                             <label htmlFor="">WhatSapp</label>
-                                            <input type="checkbox" />
+                                            <input type="checkbox" checked={reminderWs} onChange={event => setRemindWs(event.target.checked)} />
                                         </div>
                                         <div className="flex gap-2">
 
                                             <label htmlFor="">Email</label>
-                                            <input type="checkbox" defaultChecked />
+                                            <input type="checkbox" checked={remindEmail} onChange={event => setRemindEmail(event.target.checked)} />
                                         </div>
                                         <div className="flex gap-2">
 
                                             <label htmlFor="">SMS</label>
-                                            <input type="checkbox" />
+                                            <input type="checkbox" checked={remindSms} onChange={event => setRemindSms(event.target.checked)} />
                                         </div>
                                     </div>
                                 </div>

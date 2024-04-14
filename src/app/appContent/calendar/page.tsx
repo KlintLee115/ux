@@ -79,8 +79,11 @@ export default function Page() {
 
                                     {
                                         matchingKeysWithTime.map((keyTime, idx) => (
-                                            <div className={` ${matchingKeysWithTime.length > 1 && idx < matchingKeysWithTime.length - 1 && "max-w-[80%] border-b border-black mb-2 pb-2"} mt-2 ml-3`}>
-                                                <p className="text-blue-600 font-semibold">{keyTime.getHours()}:{keyTime.getMinutes()}</p>
+                                            <div className={`max-w-[80%] ${matchingKeysWithTime.length > 1 && idx < matchingKeysWithTime.length - 1 && "border-b border-black mb-4 pb-2"} mt-2 ml-3`}>
+                                                <div className="flex items-center justify-between mb-2">
+                                                    <p className="text-blue-600 font-semibold">{keyTime.getHours()}:{keyTime.getMinutes()}</p>
+                                                    <button className={` bg-black px-2 py-1 text-white text-sm rounded-xl ${isAddItemPoppedUp || isReminderPoppedUp ? "blur-lg" : ""}`} onClick={() => setIsReminderPoppedUp(true)}>Set reminder</button>
+                                                </div>
                                                 {gridItem.get(keyTime)?.map((item, index) => (
                                                     <p key={index} className="text-sm">{item}</p>
                                                 ))
@@ -135,13 +138,11 @@ export default function Page() {
                     </div>
                     <div className={`${isAddItemPoppedUp || isReminderPoppedUp ? "blur-lg" : ""}`} onClick={() => {
                         setIsAddItemPoppedUp(false)
-                        setIsReminderPoppedUp(false)
                     }
                     }>
                         {grids.map(row => <div className="flex justify-center">{row}</div>)}
                     </div>
                     <div className="absolute text-white bottom-0 right-0 flex gap-5">
-                        <button className={` bg-black p-5  rounded-xl font-bold ${isAddItemPoppedUp || isReminderPoppedUp ? "blur-lg" : ""}`} onClick={() => setIsReminderPoppedUp(true)}>Set reminder</button>
                         <button className={` bg-black p-5  rounded-xl font-bold ${isAddItemPoppedUp || isReminderPoppedUp ? "blur-lg" : ""}`} onClick={() => setIsAddItemPoppedUp(true)}>Add item</button>
                     </div>
                     <AddItemPopUp setGridsItem={setGridItem} isPoppedUp={isAddItemPoppedUp} setIsPoppedUp={setIsAddItemPoppedUp} />

@@ -34,7 +34,7 @@ const PieChart: React.FC<PieChartProps> = ({ data, options }) => {
 };
 
 const data: ChartData<'pie'> = {
-    labels: ['Red', 'Yellow'],
+    labels: ['Debt', 'Total paid'],
     datasets: [
         {
             label: 'Amount (CAD $)',

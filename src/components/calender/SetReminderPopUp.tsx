@@ -7,7 +7,7 @@ export default function SetReminderPopUp({ isPoppedUp, setIsPoppedUp }: { setGri
     const [inputNum, setInputNum] = React.useState(NaN)
 
     return (
-        <div className={`${isPoppedUp ? "scale-100" : 'scale-0'} transition-all duration-300 bg-white text-black absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 mx-auto p-5 rounded-lg`}>
+        <div className={`${isPoppedUp ? "scale-100" : 'scale-0'} border border-black transition-all duration-300 bg-white text-black absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 mx-auto p-5 rounded-lg`}>
             <button className="ml-auto w-fit text-3xl mb-7 block" onClick={() => setIsPoppedUp(false)}>X</button>
             <h3 className="my-6 items-center mr-4">Remind me this long in advance </h3>
             <input type="number" onChange={event => setInputNum(event.target.valueAsNumber)} className="border border-black w-32" min={1} />

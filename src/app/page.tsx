@@ -8,6 +8,7 @@ import { useRouter } from 'next/navigation'
 import { Icon } from 'react-icons-kit';
 import { eyeOff } from 'react-icons-kit/feather/eyeOff';
 import { eye } from 'react-icons-kit/feather/eye'
+import { useCookies } from 'react-cookie'
 
 export default function Page() {
 
@@ -16,9 +17,14 @@ export default function Page() {
     const [type, setType] = useState<HTMLInputTypeAttribute>('password');
     const [icon, setIcon] = useState(eyeOff);
 
+    const [cookies] = useCookies(['firstTimer']);
+
     const login = () => {
         if (id === 1234 && pwd === "password") {
-            router.push('/appContent/academics');
+
+            if (cookies.firstTimer || (cookies.firstTimer === undefined)) router.push('/welcome')
+
+            else router.push('/appContent/academics');
         }
         else {
             Notifications.NotificationQueue.push({
@@ -48,7 +54,11 @@ export default function Page() {
 
     return <div>
         <AddedItemsNotification />
-        <Image src={image} alt="sait logo" className="w-min cursor-pointer" width={40} height={40} />
+        <div className="flex items-center gap-3 cursor-pointer">
+            <Image src={image} alt="sait logo" className="w-min cursor-pointer" width={40} height={40} />
+            <h3 className="text-3xl text-white">EduNexus</h3>
+        </div>
+
         <p className='text-white text-center text-4xl mt-28'>Find SAIT features easily</p>
         <div className="relative border-2 w-3/5 mx-auto mt-8 border-white py-14 text-center">
 

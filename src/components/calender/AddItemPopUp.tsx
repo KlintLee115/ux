@@ -21,7 +21,7 @@ export default function AddItemPopUp({ setGridsItem, isPoppedUp, setIsPoppedUp }
     const [event, setEvent] = useState<string | undefined>()
 
     return (
-        <div className={`${isPoppedUp ? "scale-100" : 'scale-0'} transition-all duration-300 bg-white text-black absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 mx-auto p-5 px-20 rounded-lg`}>
+        <div className={`${isPoppedUp ? "scale-100" : 'scale-0'} transition-all duration-300 bg-white border border-black text-black absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 mx-auto p-5 px-20 rounded-lg`}>
             <button className="absolute top-3 w-min text-3xl mb-7 right-8" onClick={() => setIsPoppedUp(false)}>X</button>
             <div className="mt-12 items-center">
                 <label htmlFor="" className="mr-4">Pick a date: </label>
