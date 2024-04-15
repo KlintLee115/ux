@@ -25,9 +25,10 @@ const NavLink: React.FC<NavLinkProps> = ({ text, href }) => {
 }
 
 export default function NavBar({ setIsOverlayOn }: { setIsOverlayOn: Dispatch<SetStateAction<boolean>> }) {
-    return <nav className="flex justify-between items-center text-4xl gap-14">
+    return <nav className="flex justify-between items-center text-4xl gap-10">
         <NavLink href="/appContent/academics" text="Academics" />
         <NavLink href="/appContent/nonAcademics" text="Non Academics" />
+        <NavLink href="/appContent/finances" text="Finances" />
         <NavLink href="/appContent/calendar" text="Calendar" />
         <NavLink href="https://www.sait.ca/student-life/new-students/sait-start" text="Just arrived at SAIT" />
         <NavLink href="/appContent/settings" text="Settings" />

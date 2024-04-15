@@ -1,4 +1,3 @@
-import FinancialMgmt from "@/components/nonAcademics/financial-mgmt";
 import { Card } from "@/components/CardComponent";
 
 const GYM_TIMES: string[] = [] as const
@@ -37,13 +36,8 @@ export default function Home() {
                     software.
                 </p>
             </Card>
-            <div className="grid grid-cols-8 mt-6 gap-4 justify-center grid-rows-4 h-[90vh]">
-                <div className="col-span-2 row-end-3 col-start-1 row-start-1">
-                    <Card title="Financial" link='https://www.mysait.ca/mystudents/Pages/default.aspx' contFromCurrDir={false}>
-                        <FinancialMgmt />
-                    </Card>
-                </div>
-                <div className="col-span-2 row-start-1 col-start-3 row-end-1">
+            <div className="grid grid-cols-9 mt-6 gap-4 justify-center grid-rows-4 h-[90vh]">
+                <div className="col-span-3 row-start-1 col-start-4 row-end-1">
                     <Card title="Library meeting rooms" link="https://sait.libcal.com/reserve/studyrooms" contFromCurrDir={false}>
                         <div className="text-base flex flex-col gap-2 items-center">
                             <p>Monday: 2 rooms available</p>
@@ -57,7 +51,7 @@ export default function Home() {
                     </Card>
                 </div>
 
-                <div className="row-start-1 col-start-7 col-span-2 row-span-1">
+                <div className="row-start-1 col-start-7 col-span-3 row-span-1">
                     <Card title="Campus events" link="/campusEvents/">
                         <div className="text-base">
                             <div className="flex justify-between">
@@ -72,7 +66,7 @@ export default function Home() {
                         </div>
                     </Card>
                 </div>
-                <div className="row-span-1 row-start-2 col-start-7 col-span-2">
+                <div className="row-span-1 row-start-2 col-start-7 col-span-3">
                     <Card title="Deadlines" link="https://www.sait.ca/student-life/important-dates" contFromCurrDir={false}>
                         <div className="text-base">
                             <p>Tuition payment ( 1st April 2024 )</p>
@@ -80,12 +74,12 @@ export default function Home() {
                         </div>
                     </Card>
                 </div>
-                <div className="col-span-2 col-start-7 row-start-3 row-span-1">
+                <div className="col-span-3 col-start-7 row-start-3 row-span-1">
                     <Card title="Housing information" link="https://www.sait.ca/student-life/residence-and-housing" contFromCurrDir={false}>
                         <></>
                     </Card>
                 </div>
-                <div className="col-start-5 col-span-2 row-start-1">
+                <div className="col-start-1 col-span-3 row-start-1">
                     <Card title="SAIT Gym Occupance" link="https://saittrojans.skedda.com/booking?spacefeatureids=badd0e9fc604486886643c34475e2d9d&viewtype=2" contFromCurrDir={false}>
                         <div>
                             <p className="text-center text-lg font-semibold">28th April 2024</p>
@@ -105,7 +99,7 @@ export default function Home() {
                     </Card>
                 </div>
 
-                <div className="col-start-7 col-span-2">
+                <div className="col-start-7 col-span-3">
                     <Card title="SAIT Book Store" link="https://www.bkstr.com/saitstore/home" contFromCurrDir={false}>
                         <></>
                     </Card>
