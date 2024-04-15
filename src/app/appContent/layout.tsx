@@ -9,10 +9,11 @@ import Link from "next/link";
 import { useState } from "react";
 import Overlay from "@/components/HelpNDocumentation/Overlay";
 import { useCookies } from "react-cookie"
+import dynamic from "next/dynamic";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function RootLayout({
+function RootLayout({
     children,
 }: Readonly<{
     children: React.ReactNode;
@@ -20,8 +21,6 @@ export default function RootLayout({
 
     const [cookies] = useCookies(['overlayOn']);
     const [overlayOn, setIsOverlayOn] = useState(cookies.overlayOn ?? true)
-
-    console.log(overlayOn)
 
     return (
         <>
@@ -43,3 +42,7 @@ export default function RootLayout({
         </>
     );
 }
+
+export default dynamic(() => Promise.resolve(RootLayout), {
+    ssr: false
+})
