@@ -42,8 +42,8 @@ export default function Page() {
     const [grids, setGrids] = useState<JSX.Element[][]>([])
 
     const [gridItem, setGridItem] = useState<Map<Date, string[]>>(new Map([
-        [new Date(2024, 3, 27, 11, 44), ["Tuition deadline 1", "SAIT trojan badminton tournament"]],
-        [new Date(2024, 3, 27, 11, 33), ["Tuition deadline 2", "SAIT trojan volleyball tournament"]],
+        [new Date(2024, 3, 27, 11, 44), ["Tuition deadline 2", "SAIT trojan badminton tournament"]],
+        [new Date(2024, 3, 27, 11, 33), ["Tuition deadline 1", "SAIT trojan volleyball tournament"]],
         [new Date(2024, 4, 28, 9, 34), ["CPRG 215 Assignment 1", "CPRG 215 Assignment 1"]],
         [new Date(2024, 5, 28, 7, 25), ["CPRG 215 Assignment 1", "CPRG 215 Assignment 1"]]
     ]))
