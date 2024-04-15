@@ -9,7 +9,7 @@ export default function Home() {
     return (
         <div>
             <Card title="Announcements">
-                <p className="text-2xl">
+                <p>
                     SAIT partnered with OceanWave to bring next gen audio making
                     software.
                 </p>
@@ -44,7 +44,7 @@ export default function Home() {
 
 function CoursesGpaListing({ course, gpa, color }: { course: string, gpa: string, color: string }) {
     return <div className="text-center" style={{ color: `${color}` }}>
-        <p style={{ fontWeight: "bolder" }}>{course}</p>
+        <p>{course}</p>
         <p>{gpa}</p>
     </div>
 }

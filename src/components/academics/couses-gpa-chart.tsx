@@ -23,7 +23,7 @@ ChartJS.register(
 
 export default function CourseGpaChart() {
     return <div className='w-[500px] mx-auto'>
-        <h3 className='text-lg font-bold mb-3'>GPA: 3.6</h3>
+        <h3 className='text-base mb-3 text-center'>GPA: 3.6</h3>
         <Bar options={
             {
                 plugins: {
@@ -48,7 +48,7 @@ export default function CourseGpaChart() {
                         ticks: {
                             color: "black",
                             font: {
-                                size: 16
+                                size: 13
                             },
 
                         }
@@ -57,7 +57,7 @@ export default function CourseGpaChart() {
                 responsive: true,
                 color: "black",
                 font: {
-                    size: 20,
+                    size: 15,
                     weight: "bolder"
                 }
             }

@@ -142,9 +142,7 @@ export default function Page() {
                     }>
                         {grids.map(row => <div className="flex justify-center">{row}</div>)}
                     </div>
-                    <div className="absolute text-white bottom-0 right-0 flex gap-5">
-                        <button className={` bg-black p-5  rounded-xl font-bold ${isAddItemPoppedUp || isReminderPoppedUp ? "blur-lg" : ""}`} onClick={() => setIsAddItemPoppedUp(true)}>Add item</button>
-                    </div>
+                    <button className={`absolute text-white bottom-0 right-0 bg-black p-5  rounded-xl font-bold ${isAddItemPoppedUp || isReminderPoppedUp ? "blur-lg" : ""}`} onClick={() => setIsAddItemPoppedUp(true)}>Add item</button>
                     <AddItemPopUp setGridsItem={setGridItem} isPoppedUp={isAddItemPoppedUp} setIsPoppedUp={setIsAddItemPoppedUp} />
                     <SetReminderPopUp setGridsItem={setGridItem} isPoppedUp={isReminderPoppedUp} setIsPoppedUp={setIsReminderPoppedUp} />
 
