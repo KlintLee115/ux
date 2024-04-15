@@ -178,7 +178,7 @@ const NetworkDiagram = () => {
     }, []);
 
     return (
-        <svg ref={svgRef} width={"81%"} className="mx-auto " height="790"></svg>
+        <svg ref={svgRef} width={"750px"} className="mx-auto " height="790"></svg>
     );
 }
 
