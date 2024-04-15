@@ -17,7 +17,6 @@ export default () => {
             <h4 className="text-4xl mb-10 -mt-16">Welcome to EduNexus!</h4>
             <h4>Are you a new student? We recommend checking out the SAIT's official webpage for new students by clicking <a
                 className="border-b-[3px] border-white"
-                onClick={() => setCookie("firstTimer", false)}
                 href="https://www.sait.ca/student-life/new-students/sait-start">here</a>.</h4>
             <h4>Otherwise, click <a
                 className="border-b-[3px] border-white"
