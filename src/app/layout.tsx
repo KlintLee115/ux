@@ -31,13 +31,6 @@ export default function RootLayout({
         <div className="relative z-20 p-5">
           {children}
         </div>
-        <div className="pt-10">
-          <p className="text-black text-center relative z-20 py-5 bg-green-400">SAIT logo from
-            <Link className=" ml-1 underline" href={"https://www.google.com/url?sa=i&url=https%3A%2F%2Fcollegedunia.com%2Fcanada%2Fcollege%2F585-sait-polytechnic-calgary&psig=AOvVaw2AL8vGAeTmP3eVZJZjgDDX&ust=1713298464861000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCKDg76qExYUDFQAAAAAdAAAAABAP"}>
-              source
-            </Link>
-          </p>
-        </div>
       </body>
     </html>
   );

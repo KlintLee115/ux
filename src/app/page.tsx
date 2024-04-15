@@ -22,9 +22,10 @@ export default function Page() {
     const login = () => {
         if (id === 1234 && pwd === "password") {
 
-            if (cookies.firstTimer || (cookies.firstTimer === undefined)) router.push('/welcome')
+            // if (cookies.firstTimer || (cookies.firstTimer === undefined)) 
+            router.push('/welcome')
 
-            else router.push('/appContent/academics');
+            // else router.push('/appContent/academics');
         }
         else {
             Notifications.NotificationQueue.push({
