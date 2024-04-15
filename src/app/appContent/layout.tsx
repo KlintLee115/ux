@@ -19,7 +19,9 @@ export default function RootLayout({
 }>) {
 
     const [cookies] = useCookies(['overlayOn']);
-    const [overlayOn, setIsOverlayOn] = useState(cookies.overlayOn)
+    const [overlayOn, setIsOverlayOn] = useState(cookies.overlayOn ?? true)
+
+    console.log(overlayOn)
 
     return (
         <>
