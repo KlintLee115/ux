@@ -148,7 +148,7 @@ export default function Home() {
                     software.
                 </p>
             </Card>
-            <div className="grid grid-cols-9 mt-6 gap-4 justify-center grid-rows-4 h-[90vh]">
+            <div className="grid grid-cols-9 mt-6 gap-4 justify-center grid-rows-12 h-[90vh]">
                 <div className="col-span-3 row-start-1 col-start-4 row-end-1">
                     <Card title="Library meeting rooms" link="https://sait.libcal.com/reserve/studyrooms" contFromCurrDir={false}>
                         <div className="flex flex-col gap-2 items-center">
@@ -171,14 +171,10 @@ export default function Home() {
                                 <p>( 1st April 2024 )</p>
                             </div>
 
-                            <div className="flex justify-between">
-                                <p className="w-3/5 line-clamp-1">SAIT trojan basketball tournament final match</p>
-                                <p className="line-clamp-1">( 25th April 2024 )</p>
-                            </div>
                         </div>
                     </Card>
                 </div>
-                <div className="row-span-1 row-start-2 col-start-7 col-span-3">
+                <div className="row-span-1 row-start-7 col-start-7 col-span-3">
                     <Card title="Deadlines" link="https://www.sait.ca/student-life/important-dates" contFromCurrDir={false}>
                         <div className="text-base">
                             <p>Tuition payment ( 1st April 2024 )</p>
@@ -211,7 +207,7 @@ export default function Home() {
                     </Card>
                 </div>
 
-                <div className="col-start-7 col-span-3">
+                <div className="col-start-7 col-span-3 row-start-5">
                     <Card title="SAIT Book Store" link="https://www.bkstr.com/saitstore/home" contFromCurrDir={false}>
                         <></>
                     </Card>
